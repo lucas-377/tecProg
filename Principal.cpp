@@ -119,7 +119,7 @@ void Principal::executar()
 
     separarLinha();
 
-    //Informatica.listaDisciplinas();
+    Informatica.listaDisciplinas();
     //TecProg.getDepartamento();
 }
 

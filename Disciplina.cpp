@@ -31,7 +31,8 @@ string Disciplina::getNome()
 
 void Disciplina::setDepartamento(Departamento *departamento)
 {
-    departamento->insereDisciplina(this);
+    departamentoAssociado = departamento;
+    //departamento->insereDisciplina(this); // Inclui Disciplina no Departamento.
 }
 
 Departamento *Disciplina::getDepartamento()

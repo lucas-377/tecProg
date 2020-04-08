@@ -31,6 +31,8 @@ void Departamento::setUniversidadeFiliado(Universidade *universidade)
 
 void Departamento::insereDisciplina(Disciplina *disciplina)
 {
+    disciplina->setDepartamento(this); // Insere a Disciplina no Departamento.
+
     if (primeiraDisciplina == NULL)
     {
         primeiraDisciplina = disciplina;
@@ -53,7 +55,7 @@ void Departamento::listaDisciplinas()
 
     while (auxiliar != NULL)
     {
-        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << this->getNome() << endl;
+        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << getNome() << endl;
         auxiliar = auxiliar->proximaDisciplina;
     }
 }
