@@ -1,12 +1,22 @@
 #include "Disciplina.h"
 
-Disciplina::Disciplina(string areaConhecimento)
+Disciplina::Disciplina()
 {
     departamentoAssociado = NULL;
     proximaDisciplina = NULL;
     anteriorDisciplina = NULL;
-    this->areaConhecimento = areaConhecimento;
+    areaConhecimento = "";
     this->nome = "";
+}
+
+void Disciplina::setAreaConhecimento(string areaConhecimento)
+{
+    this->areaConhecimento = areaConhecimento;
+}
+
+string Disciplina::getAreaConhecimento()
+{
+    return areaConhecimento;
 }
 
 void Disciplina::setIdentificacao(int id)
@@ -32,12 +42,11 @@ string Disciplina::getNome()
 void Disciplina::setDepartamento(Departamento *departamento)
 {
     departamentoAssociado = departamento;
-    //departamento->insereDisciplina(this); // Inclui Disciplina no Departamento.
 }
 
 Departamento *Disciplina::getDepartamento()
 {
-    cout << departamentoAssociado->getNome() << endl;
+    cout << departamentoAssociado->getNome() << " possui a disciplina de " << getNome() << endl;
 }
 
 Disciplina::~Disciplina()

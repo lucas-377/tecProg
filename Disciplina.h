@@ -17,7 +17,7 @@ private:
 
 public:
     // Construtor.
-    Disciplina(string areaConhecimento = "");
+    Disciplina(); // Sem parametros.
 
     // Atributos da Lista de Disciplinas.
     Disciplina *proximaDisciplina;
@@ -28,6 +28,8 @@ public:
     int getIdentificacao();
     void setNome(string nome);
     string getNome();
+    void setAreaConhecimento(string areaConhecimento);
+    string getAreaConhecimento();
     void setDepartamento(Departamento *departamento);
     Departamento *getDepartamento();
 

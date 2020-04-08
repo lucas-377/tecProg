@@ -15,7 +15,7 @@ private:
     int diaAtual; int mesAtual; int anoAtual;
 
     // Professores.
-    Professor Einstein, Newton;
+    Professor Einstein, Newton, Simao;
 
     // Alunos.
     Aluno Lucas;
@@ -24,7 +24,7 @@ private:
     Universidade UTFPR, Princeton, Cambridge;
 
     // Departamentos.
-    Departamento Fisica, Matematica, Informatica, Design;
+    Departamento Fisica, Matematica, Informatica;
 
     // Disciplinas.
     Disciplina TecProg;
@@ -43,6 +43,7 @@ public:
 
     // Métodos.
     void executar();
+    void calculoIdades();
     void separarLinha();
 
     // Destrutor.

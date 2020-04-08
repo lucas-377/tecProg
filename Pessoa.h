@@ -21,6 +21,7 @@ public:
     void calculaIdade(int diaAtual, int mesAtual, int anoAtual);
     void inicializar(int diaNasc, int mesNasc, int anoNasc, string nome = "");
     int getIdade();
+    string getNome();
 
     // Destrutor.
     ~Pessoa();

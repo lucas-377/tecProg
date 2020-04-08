@@ -22,12 +22,17 @@ void Pessoa::calculaIdade(int diaAtual, int mesAtual, int anoAtual)
                 idade -= 1;
     }
 
-    cout << "A idade de " << nome << " seria: " << getIdade() << endl;
+    cout << "A idade de " << getNome() << " seria: " << getIdade() << endl;
 }
 
 int Pessoa::getIdade()
 {
     return idade;
+}
+
+string Pessoa::getNome()
+{
+    return nome;
 }
 
 void Pessoa::inicializar(int diaNasc, int mesNasc, int anoNasc, string nome)

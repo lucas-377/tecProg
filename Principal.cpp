@@ -2,9 +2,7 @@
 
 Principal::Principal():
     // Construtora sem parametro explicitada.
-    Einstein(),
-    Newton(),
-    Lucas()
+    Einstein(), Newton(), Simao(), Lucas()
 {
     // Adquire a data atual do sistema.
     struct tm *local; // Estrutura contendo as variaveis do calendario.
@@ -39,6 +37,7 @@ void Principal::inicializaUniversidades()
     // Associação (agregacao fraca) dos Departamentos as Universidades por referência.
     Princeton.setDepartamento(&Fisica);
     Cambridge.setDepartamento(&Matematica);
+    UTFPR.setDepartamento(&Informatica);
 }
 
 void Principal::inicializaDepartamentos()
@@ -46,10 +45,12 @@ void Principal::inicializaDepartamentos()
     // Nomeia Departamentos.
     Fisica.setNome("Departamento de Fisica");
     Matematica.setNome("Departamento de Matematica");
+    Informatica.setNome("Departamento de Informatica");
 
     // Referencia Universidade do Departamento filiado.
     Fisica.setUniversidadeFiliado(&Princeton);
     Matematica.setUniversidadeFiliado(&Cambridge);
+    Informatica.setUniversidadeFiliado(&UTFPR);
 }
 
 void Principal::inicializaProfessores()
@@ -57,14 +58,17 @@ void Principal::inicializaProfessores()
     // Inicialização dos objetos da classe Professor.
     Einstein.inicializar(14, 3, 1879, "Albert Einstein");
     Newton.inicializar(4, 1, 1643, "Isaac Newton");
+    Simao.inicializar(3, 10, 1976, "Jean Simao");
 
     // Filiação (agregacao fraca) dos Professores as Universidades por referência.
     Einstein.setUniversidadeFiliado(&Princeton);
     Newton.setUniversidadeFiliado(&Cambridge);
+    Simao.setUniversidadeFiliado(&UTFPR);
 
     // Filiação (agregacao fraca) dos Professores aos Departamentos por referência.
     Einstein.setDepartamentoFiliado(&Fisica);
     Newton.setDepartamentoFiliado(&Matematica);
+    Simao.setDepartamentoFiliado(&Informatica);
 }
 
 void Principal::inicializaDisciplinas()
@@ -89,10 +93,7 @@ void Principal::executar()
 {
     separarLinha();
 
-    // Executa o calculo da idade.
-    Einstein.calculaIdade(diaAtual, mesAtual, anoAtual);
-    Newton.calculaIdade(diaAtual, mesAtual, anoAtual);
-    Lucas.calculaIdade(diaAtual, mesAtual, anoAtual);
+    calculoIdades();
 
     separarLinha();
 
@@ -100,13 +101,23 @@ void Principal::executar()
     Einstein.getUniversidadeFiliado();
     Einstein.getDepartamentoFiliado();
 
+    cout << endl;
+
     Newton.getUniversidadeFiliado();
     Newton.getDepartamentoFiliado();
+
+    cout << endl;
+
+    Simao.getUniversidadeFiliado();
+    Simao.getDepartamentoFiliado();
 
     separarLinha();
 
     // Informa Departamentos pertencentes a Universidade.
     Princeton.imprimeDepartamentos();
+
+    separarLinha();
+
     // Informa Universidade referenciada ao Departamento.
     Fisica.getUniversidadeFiliado();
 
@@ -120,7 +131,21 @@ void Principal::executar()
     separarLinha();
 
     Informatica.listaDisciplinas();
-    //TecProg.getDepartamento();
+
+    separarLinha();
+
+    TecProg.getDepartamento();
+
+    separarLinha();
+}
+
+void Principal::calculoIdades()
+{
+    // Executa o calculo da idade.
+    Einstein.calculaIdade(diaAtual, mesAtual, anoAtual);
+    Newton.calculaIdade(diaAtual, mesAtual, anoAtual);
+    Simao.calculaIdade(diaAtual, mesAtual, anoAtual);
+    Lucas.calculaIdade(diaAtual, mesAtual, anoAtual);
 }
 
 void Principal::separarLinha()

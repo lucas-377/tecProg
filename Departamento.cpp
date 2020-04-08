@@ -21,7 +21,7 @@ string Departamento::getNome()
 
 Universidade* Departamento::getUniversidadeFiliado()
 {
-    cout << universidadeFiliado->getNome() << endl;
+    cout << getNome() << " pertence a " << universidadeFiliado->getNome() << endl;
 }
 
 void Departamento::setUniversidadeFiliado(Universidade *universidade)
@@ -55,7 +55,7 @@ void Departamento::listaDisciplinas()
 
     while (auxiliar != NULL)
     {
-        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << getNome() << endl;
+        cout << "A disciplina " << auxiliar->getNome() << " pertence ao " << getNome() << endl;
         auxiliar = auxiliar->proximaDisciplina;
     }
 }
@@ -68,7 +68,7 @@ void Departamento::listaDisciplinas2()
 
     while (auxiliar != NULL)
     {
-        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << this->getNome() << endl;
+        cout << "A disciplina " << auxiliar->getNome() << " pertence ao " << getNome() << endl;
         auxiliar = auxiliar->anteriorDisciplina;
     }
 }

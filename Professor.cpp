@@ -1,12 +1,5 @@
 #include "Professor.h"
 
-Professor::Professor(int diaNasc, int mesNasc, int anoNasc, string nome) :
-    Pessoa(diaNasc, mesNasc, anoNasc, nome)
-{
-    universidadeFiliado = NULL;
-    departamentoFiliado = NULL;
-}
-
 Professor::Professor() :
     Pessoa()
 {
@@ -14,9 +7,16 @@ Professor::Professor() :
     departamentoFiliado = NULL;
 }
 
+Professor::Professor(int diaNasc, int mesNasc, int anoNasc, string nome) :
+    Pessoa(diaNasc, mesNasc, anoNasc, nome)
+{
+    universidadeFiliado = NULL;
+    departamentoFiliado = NULL;
+}
+
 void Professor::getUniversidadeFiliado()
 {
-    cout << nome << " trabalha para a " << universidadeFiliado->getNome() << endl;
+    cout << getNome() << " trabalha para a " << universidadeFiliado->getNome() << endl;
 }
 
 void Professor::setUniversidadeFiliado(Universidade *universidade)
@@ -26,7 +26,7 @@ void Professor::setUniversidadeFiliado(Universidade *universidade)
 
 void Professor::getDepartamentoFiliado()
 {
-    cout << departamentoFiliado->getNome() << endl << endl;;
+    cout << departamentoFiliado->getNome() << endl;
 }
 
 void Professor::setDepartamentoFiliado(Departamento *departamento)

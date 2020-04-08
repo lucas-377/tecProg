@@ -15,13 +15,13 @@ private:
 
 public:
     // Função construtora.
-    Professor(int diaNasc, int mesNasc, int anoNasc, string nome = "");
     Professor(); // Sem parâmetros.
+    Professor(int diaNasc, int mesNasc, int anoNasc, string nome = "");
 
     // Métodos.
     void setUniversidadeFiliado(Universidade *universidade); // Associa uma Universidade a um Professor.
-    void setDepartamentoFiliado(Departamento *departamento); // Associa um Departamento a um Professor.
     void getUniversidadeFiliado(); // Informa a Universidade que o Professor trabalha.
+    void setDepartamentoFiliado(Departamento *departamento); // Associa um Departamento a um Professor.
     void getDepartamentoFiliado(); // Informa o Departamento que o Professor trabalha.
 
     // Destrutor.
