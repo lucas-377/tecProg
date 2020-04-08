@@ -6,7 +6,7 @@
 #include "Universidade.h"
 #include "Disciplina.h"
 
-#include<time.h>
+#include <time.h>
 
 class Principal
 {
@@ -44,7 +44,6 @@ public:
     // Métodos.
     void executar();
     void separarLinha();
-    void listarDisciplinasDepto();
 
     // Destrutor.
     ~Principal();

@@ -19,7 +19,7 @@ string Departamento::getNome()
     return nome;
 }
 
-void Departamento::getUniversidadeFiliado()
+Universidade* Departamento::getUniversidadeFiliado()
 {
     cout << universidadeFiliado->getNome() << endl;
 }
@@ -40,6 +40,7 @@ void Departamento::insereDisciplina(Disciplina *disciplina)
     else
     {
         atualDisciplina->proximaDisciplina = disciplina;
+        disciplina->anteriorDisciplina = atualDisciplina;
         atualDisciplina = disciplina;
     }
 }
@@ -52,7 +53,7 @@ void Departamento::listaDisciplinas()
 
     while (auxiliar != NULL)
     {
-        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << nome << endl;
+        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << this->getNome() << endl;
         auxiliar = auxiliar->proximaDisciplina;
     }
 }
@@ -65,7 +66,7 @@ void Departamento::listaDisciplinas2()
 
     while (auxiliar != NULL)
     {
-        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << nome << endl;
+        cout << "A disciplina " << auxiliar->getNome() << " Pertence ao " << this->getNome() << endl;
         auxiliar = auxiliar->anteriorDisciplina;
     }
 }

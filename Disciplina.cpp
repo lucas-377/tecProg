@@ -4,6 +4,7 @@ Disciplina::Disciplina(string areaConhecimento)
 {
     departamentoAssociado = NULL;
     proximaDisciplina = NULL;
+    anteriorDisciplina = NULL;
     this->areaConhecimento = areaConhecimento;
     this->nome = "";
 }
@@ -33,13 +34,14 @@ void Disciplina::setDepartamento(Departamento *departamento)
     departamento->insereDisciplina(this);
 }
 
-Departamento *Disciplina::getDepartamentoAssociado()
+Departamento *Disciplina::getDepartamento()
 {
-    return departamentoAssociado;
+    cout << departamentoAssociado->getNome() << endl;
 }
 
 Disciplina::~Disciplina()
 {
     departamentoAssociado = NULL;
     proximaDisciplina = NULL;
+    anteriorDisciplina = NULL;
 }

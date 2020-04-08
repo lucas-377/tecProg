@@ -22,11 +22,11 @@ Principal::Principal():
 
 void Principal::inicializa()
 {
-    void inicializaUniversidades();
-    void inicializaDepartamentos();
-    void inicializaProfessores();
-    void inicializaDisciplinas();
-    void inicializaAlunos();
+    inicializaUniversidades();
+    inicializaDepartamentos();
+    inicializaProfessores();
+    inicializaDisciplinas();
+    inicializaAlunos();
 }
 
 void Principal::inicializaUniversidades()
@@ -67,12 +67,6 @@ void Principal::inicializaProfessores()
     Newton.setDepartamentoFiliado(&Matematica);
 }
 
-void Principal::inicializaAlunos()
-{
-    // Inicialização dos objetos da classe Aluno.
-    Lucas.inicializar(1, 11, 1992, "Lucas Santana");
-}
-
 void Principal::inicializaDisciplinas()
 {
     // Nomeia Disciplinas.
@@ -85,10 +79,10 @@ void Principal::inicializaDisciplinas()
     TecProg.setDepartamento(&Informatica);
 }
 
-void Principal::listarDisciplinasDepto()
+void Principal::inicializaAlunos()
 {
-    // Lista Disciplinas associadas ao Departamento.
-    Informatica.listaDisciplinas();
+    // Inicialização dos objetos da classe Aluno.
+    Lucas.inicializar(1, 11, 1992, "Lucas Santana");
 }
 
 void Principal::executar()
@@ -125,7 +119,8 @@ void Principal::executar()
 
     separarLinha();
 
-    listarDisciplinasDepto();
+    //Informatica.listaDisciplinas();
+    //TecProg.getDepartamento();
 }
 
 void Principal::separarLinha()

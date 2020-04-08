@@ -22,7 +22,7 @@ void Pessoa::calculaIdade(int diaAtual, int mesAtual, int anoAtual)
                 idade -= 1;
     }
 
-    cout << "A idade de " << nome << " seria: " << this->getIdade() << endl;
+    cout << "A idade de " << nome << " seria: " << getIdade() << endl;
 }
 
 int Pessoa::getIdade()

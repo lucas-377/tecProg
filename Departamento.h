@@ -29,7 +29,7 @@ public:
     void setNome(string nome);
     string getNome();
     void setUniversidadeFiliado(Universidade *universidade); // Associa uma Universidade a um Departamento.
-    void getUniversidadeFiliado(); // Informa Universidade que esta associada ao Departamento.
+    Universidade *getUniversidadeFiliado(); // Informa Universidade que esta associada ao Departamento.
     void insereDisciplina(Disciplina *disciplina);
     void listaDisciplinas();
     void listaDisciplinas2();

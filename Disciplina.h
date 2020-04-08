@@ -19,17 +19,17 @@ public:
     // Construtor.
     Disciplina(string areaConhecimento = "");
 
+    // Atributos da Lista de Disciplinas.
+    Disciplina *proximaDisciplina;
+    Disciplina *anteriorDisciplina;
+
     // Métodos.
     void setIdentificacao(int id);
     int getIdentificacao();
     void setNome(string nome);
     string getNome();
     void setDepartamento(Departamento *departamento);
-    Departamento *getDepartamentoAssociado();
-
-    // Métodos da Lista de Disciplinas.
-    Disciplina *proximaDisciplina;
-    Disciplina *anteriorDisciplina;
+    Departamento *getDepartamento();
 
     // Destrutor.
     ~Disciplina();
